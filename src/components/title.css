@@ -1,0 +1,55 @@
+.items {
+  counter-reset: item;
+}
+
+.title-container {
+  position: relative;
+  @apply lg:pl-[90px] xl:pl-[150px];
+  padding-top: 80px;
+}
+
+.title-container::after {
+  content: "0" counter(item);
+  counter-increment: item;
+
+  @apply absolute left-0 top-0  opacity-10;
+  @apply text-[100px] md:text-[120px] lg:text-[200px] xl:text-[240px];
+
+  height: 190px;
+  display: grid;
+  place-content: center;
+  font-family: gilroy;
+  z-index: -1;
+}
+
+.item:nth-child(n + 10) .title-container::after {
+  content: counter(item);
+}
+
+.item:nth-child(even) .title-container + .flex-1 {
+  @apply md:-order-1;
+}
+
+.title {
+  @apply block text-2xl  md:text-4xl lg:text-5xl xl:text-6xl font-semibold mb-7;
+  font-family: Chronicle Display;
+}
+
+.title-banner {
+  @apply capitalize leading-tight;
+
+  font-size: clamp(2rem, 6vw + 1rem, 4rem);
+}
+
+.title-banner::after {
+  content: "";
+}
+
+.subtitle {
+  @apply inline-flex items-center gap-6 text-primary text-lg font-extrabold uppercase tracking-[6px] mb-7;
+}
+
+.subtitle::before {
+  content: "";
+  @apply inline-block w-[72px] h-[2px] bg-primary;
+}

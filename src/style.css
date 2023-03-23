@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+* html { font-size: 100%; }
+* body { font-size: 16px; font-size: 1rem; line-height: 1; }
+* 4px    	0.25rem
+* 8px		  0.5rem
+* 12px		0.75rem
+* 14px		0.875rem
+* 16px		1rem
+* 18px		1.125rem
+* 20px		1.25rem
+* 22px		1.375rem
+* 24px		1.5rem
+* 32px		2rem
+* 36px		2.25rem
+* 48px		3rem
+* 64px		4rem
+* 72px		4.5rem
+*/
+
+/* custom */
+
+:root {
+  --primary: #fbd784;
+}
+
+body {
+  background-color: #0b1d26;
+  color: white;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+@font-face {
+  font-family: "Chronicle Display";
+  src: url("./webfonts/Chronicle Display Roman.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Chronicle Display";
+  src: url("./webfonts/Chronicle Display Semibold.otf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Chronicle Display";
+  src: url("./webfonts/Chronicle Display Black.otf");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Chronicle Display";
+  src: url("./webfonts/Chronicle Display Light Italic.otf");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("./webfonts/Gilroy-ExtraBold.otf");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("./webfonts/Gilroy-Light.otf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* img, */
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  --container-padding-inline: 2rem;
+
+  max-width: min(100% - var(--container-padding-inline), 90rem);
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+@media (max-width: 640px) {
+  .container {
+    --container-padding-inline: 0.425rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    padding-inline: 4px;
+  }
+}
+
+.container-header {
+  max-width: min(90%);
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+.debug {
+  outline: 1px red solid;
+}

@@ -1,0 +1,10 @@
+.button {
+  --default-color: #fff;
+
+  @apply inline-flex items-center gap-4 text-lg;
+  color: var(--default-color);
+}
+
+.button[data-theme="primary"] {
+  color: var(--primary);
+}

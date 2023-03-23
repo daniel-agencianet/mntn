@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MNTN</title>
+  </head>
+
+  <!-- prettier-ignore -->
+  <% const items = [
+    { title: "What level of hiker are you", subtitle: "GET STARTED", text: "Determining what level of hiker you are can be an important tool when planning future hikes. This hiking level guide will help you plan hikes according to different hike ratings set by various websites like All Trails and Modern Hiker. What type of hiker are you – novice, moderate, advanced moderate, expert, or expert backpacker?", src: "01.png", alt: "pessoa correndo na montanha" },
+
+    { title: "Picking the  right Hiking Gear!", subtitle: "HIKING ESSENTIALS", text: "The nice thing about beginning hiking is that you don't really need any special gear, you can probably get away with things you already have. Lets start with clothing. A typical mistake hiking beginners make is wearing jeans and regular clothes, which will get heavy and chafe wif they get sweaty or wet.", src: "02.png", alt: "mochileiro parado na montanha" },
+
+    { title: "Understand Your Map & Timing", subtitle: "WHERE YOU GO IS THE KEY", text: "To start, print out the hiking guide and map. If its raining, throw them in a Zip-Lock bag. Read over the guide, study the map, and have a good idea of what to expect. I like to know what my next landmark is as I hike. For example, Ill read the guide and know that say, in a mile, I make a right turn at the junction..", src: "03.png", alt: "mao segurando bussola na montanha" },
+
+
+  ]; %>
+
+  <body>
+    <header>
+      <div class="absolute w-full top-16 px-2 md:px-20 z-10">
+        <div class="flex justify-between">
+          <a href="#" aria-label="logo">
+            <img src="/src/img/Logo.png" alt="" />
+          </a>
+
+          <!-- prettier-ignore -->
+          <nav
+            class="hidden group md:block
+            [&:is(.show)]:block [&:is(.show)]:absolute [&:is(.show)]:right-4 [&:is(.show)]:top-16
+            [&:is(.show)]:bg-neutral-400 [&:is(.show)]:p-5"
+            id="menu-nav"
+          >
+            <ul class="flex gap-5 group-[.show]:flex-col">
+              <li><a href="#">Equipament</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </nav>
+
+          <div class="flex gap-4">
+            <a href="#" class="flex items-center gap-4">
+              <div><img src="/src/img/cart.png" alt="" /></div>
+              <p class="hidden md:block">Account</p>
+            </a>
+
+            <button class="md:hidden" id="menu-button">
+              <img src="/src/img/menu-icon.png" width="30" class="invert" alt="menu-icon" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="hero">
+          <div class="hero-parallax">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+          <!-- gradiente -->
+          <div
+            class="absolute w-full arcaica:h-[450px] h-[700px] bottom-0"
+            style="background: linear-gradient(180deg, rgba(11 29 38 / 0) 0, #0b1d26 61%)"
+          ></div>
+
+          <!-- overlay -->
+          <div class="absolute inset-0 -z-[1] bg-black/40"></div>
+
+          <!-- socials -->
+          <div class="absolute top-[33vh] left-20 hidden xl:block">
+            <div class="flex flex-col gap-8">
+              <span style="writing-mode: vertical-lr">Follow us</span>
+              <ul class="grid place-content-center gap-8">
+                <li>
+                  <a href="#" aria-label="instagram">
+                    <img src="/src/img/instagram.png" alt="instagram" />
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" aria-label="twitter">
+                    <img src="/src/img/twitter.png" alt="twitter" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- indicators -->
+          <div class="hero-indicators">
+            <div class="grid grid-flow-col md:grid-flow-row place-items-end">
+              <button class="active">Start</button>
+              <button>01</button>
+              <button>02</button>
+              <button>03</button>
+            </div>
+          </div>
+          <div class="container mt-[22vh]">
+            <div class="max-w-[55ch] lg:max-w-none lg:w-[min(100%,88ch)] lg:mx-auto lg:pr-20 xl:pr-0">
+              <p class="subtitle">A HIKING GUIDE</p>
+              <h1 class="title title-banner">Be prepared for the Mountains and beyond!</h1>
+
+              <a href="#" class="mt-7 button" data-theme="light">
+                scroll down <img src="/src/img/arrow-down.png" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- items -->
+      <section
+        class="-translate-y-96 arcaica:-translate-y-64 arcaica:-mb-[250px] -mb-[350px] sm:-mb-96 md:-mb-80 xl:-mb-48"
+      >
+        <div class="container">
+          <div class="items grid gap-10 md:gap-20 lg:gap-48">
+            <% items.forEach(item => { %>
+            <div class="item flex flex-col md:flex-row gap-16 lg:gap-20 xl:gap-28 items-center">
+              <div class="title-container flex-1">
+                <div class="max-w-[55ch]">
+                  <p class="subtitle"><%= item.subtitle %></p>
+                  <h1 class="title"><%= item.title %></h1>
+                  <p><%= item.text %></p>
+
+                  <a href="#" class="mt-7 button" data-theme="primary">
+                    read more <img src="/src/img/arrow-right.png" alt="" />
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex-1">
+                <img src="/src/img/<%= item.src %>" alt="<%= item.alt %>" />
+              </div>
+            </div>
+            <% }); %>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="container">
+          <div class="flex flex-col md:flex-row py-10 sm:py-20 w-full gap-10">
+            <div class="flex-1 flex order-last md:order-first flex-col grow-[0.8] lg:grow-[1.2]: xl:grow-[1.4]">
+              <img src="/src/img/Logo.png" alt="mntn" class="self-start" />
+
+              <p class="mt-6 max-w-[30ch]">Get out there & discover your next slope, mountain & destination!</p>
+
+              <p class="text-white/40 mt-10 md:mt-auto">
+                Copyright <%= new Date().getFullYear() %> MNTN, Inc. Terms & Privacy
+              </p>
+            </div>
+
+            <div class="flex-1">
+              <div class="flex justify-between">
+                <div>
+                  <h2 class="text-xl lg:text-2xl text-primary">More on The Blog</h2>
+                  <ul class="leading-10 mt-6">
+                    <li><a href="#">About MNTN</a></li>
+                    <li><a href="#">Contributors & Writers</a></li>
+                    <li><a href="#">Write For Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h2 class="text-xl lg:text-2xl text-primary">More on MNTN</h2>
+                  <ul class="leading-10 mt-6">
+                    <li><a href="#">The Team</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Press</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
